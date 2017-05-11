@@ -1,0 +1,9 @@
+---
+applications:
+- name: pcfbot
+  memory: 1G
+  instances: 1
+  host: pcfpal
+  timeout: 300
+  env:
+    TOKEN: 
