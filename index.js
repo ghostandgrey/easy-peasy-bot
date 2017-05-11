@@ -1,8 +1,4 @@
-/**
- * A Bot for Slack!
- */
-
-
+var cfEvents = require('./query.js');
 /**
  * Define a function for initiating a conversation on installation
  * With custom integrations, we don't have a way to find out who installed us, so we can't message them :(
@@ -95,6 +91,7 @@ controller.hears('hello', 'direct_message', function (bot, message) {
  * Any un-handled direct mention gets a reaction and a pat response!
  */
 controller.on('direct_message,mention,direct_mention', function (bot, message) {
+    var cfEventsString = cfEvents.getCFEvents();
     bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -103,6 +100,6 @@ controller.on('direct_message,mention,direct_mention', function (bot, message) {
         if (err) {
             console.log(err)
         }
-        bot.reply(message, 'I heard you loud and clear boss.');
+        bot.reply(message, cfEventsString);
     });
 });
