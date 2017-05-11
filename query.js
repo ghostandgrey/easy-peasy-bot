@@ -20,7 +20,7 @@ exports.getCFEvents = function() {
         bearerToken = result.access_token;
         return Events.getEvents({q: "type:app.crash"});
     }).then(function(result) {
-        console.log(result);
+        return result.resources[0];
     }).catch(function(reason) {
         console.error("Error: " + reason);
     });
