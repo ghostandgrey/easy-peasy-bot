@@ -1,6 +1,6 @@
 "use-strict";
 
-var credentials = require('login');
+var credentials = require('./login.js');
 
 const endpoint = "https://api.pcf-system.intware.com";
 const CloudController = new (require("cf-nodejs-client")).CloudController(endpoint);
