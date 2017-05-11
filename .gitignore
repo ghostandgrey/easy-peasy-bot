@@ -1,5 +1,6 @@
 .idea
 bot-token
+*.iml
 
 # Logs
 logs
